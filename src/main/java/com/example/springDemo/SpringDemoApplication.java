@@ -1,5 +1,6 @@
 package com.example.springDemo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +14,11 @@ public class SpringDemoApplication {
 		SpringApplication.run(SpringDemoApplication.class, args);
 	}
 
+	@Value("${name}")
+	private String name;
+
 	@RequestMapping("hello")
 	public String hello() {
-		return "hello world!";
+		return "hello, " + name;
 	}
 }
