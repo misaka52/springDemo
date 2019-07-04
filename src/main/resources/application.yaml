@@ -1,0 +1,4 @@
+# name: ysc-localhost
+spring:
+  profiles:
+    active: @profile.active@
